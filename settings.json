@@ -1,0 +1,7 @@
+{
+  "openPhases" : ["phaseBugReporting"],
+  "phaseBugReporting": "ped3",
+  "phaseTeamResponse": "CS2103T-PED3-dev-response",
+  "phaseTesterResponse": "ped3",
+  "phaseModeration": "CS2103T-PED3-tutor-moderation"
+}
