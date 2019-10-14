@@ -1,0 +1,8 @@
+1. Check HTML
+2. There is no password to check against, just submit blank
+3. Go to the link in the HTML (password.php)
+4. Change the value in the email address to send to to your own hack this site email
+5. Same as 4.
+6. Observe that the pattern is for e.g. 'abcde' -> 'acegi'. first letter is the same, second is one letter after second, third is two letters after third (c vs e) etc. Use ascii table to help
+7. Enter ; ls to see the directory contents and access the most suspicious one
+8. 
