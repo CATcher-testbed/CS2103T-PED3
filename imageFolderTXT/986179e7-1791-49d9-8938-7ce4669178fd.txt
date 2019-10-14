@@ -1,0 +1,44 @@
+# Function to find the row and column of a number in a state
+def find(state, number):
+    r_number = 0
+    c_number = 0
+    for i in range(len(state)):
+        for j in range(len(state)):
+            if state[i][j] == number:
+                r_number = i
+                c_number = j
+    return r_number, c_number
+
+# Function to copy states
+def copy_State(state):
+    newstate = []
+    for i in range(len(state)):
+        row = []
+        for j in range(len(state)):
+            row.append(state[i][j])
+        newstate.append(row)
+    return newstate
+
+# Heuristic function that recursively computates the number of swaps required to reach the goal
+# starting from the first cell to the last.
+def h_N_Swaps(state, goal_state):
+    state_copy = copy_State(state)
+    n_Swaps = swap(state_copy, goal_state, 8)
+    return n_Swaps
+
+# Enabler function for number of swaps heuristic
+def swap(state, goal_state, number):
+    if number == 0:
+        return 0
+
+    gr_number, gc_number = find(goal_state, number)
+    r_number, c_number = find(state, number)
+    if gr_number != r_number or gc_number != c_number :
+        temp = state[gr_number][gc_number]
+        state[gr_number][gc_number] = number
+        state[r_number][c_number] = temp
+        return 1 + swap(state, goal_state, number - 1)
+    else :
+        return 0 + swap(state, goal_state, number - 1)
+
+
